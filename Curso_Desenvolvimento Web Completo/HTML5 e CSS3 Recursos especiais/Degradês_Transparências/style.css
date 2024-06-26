@@ -1,0 +1,10 @@
+#caixa{
+    height: 300px;
+    width: 300px;
+    /*background: url(./arquivos-necessarios-degrades-transparencias/arquivos-necessarios-degrades-transparencias/camera.png);*/
+    /*background: linear-gradient(96deg,red,green,yellow);*/
+    background: radial-gradient(red,green,yellow);
+}
+#caixa h1{
+    /*background: rgba(255,255, 255,0.8);*/
+}

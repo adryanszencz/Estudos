@@ -1,0 +1,23 @@
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+} 
+ul a{
+    text-decoration: none;
+    color: white;
+    text-indent: 40px;
+    line-height: 40px;
+    width: 200px;
+    height: 40px;
+    display: block;
+    background: url(./arquivos-necessarios-barra-navegacao-vertical/menu.png) ;
+}
+a:hover{
+    background-position: right bottom;
+}
+
+#Home #navegaçao .home a , #sobre #navegaçao .sobre a, #serviços #navegaçao .serviços a{
+    background-position: right bottom;
+}

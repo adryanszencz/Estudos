@@ -1,0 +1,49 @@
+@use './variables';
+@use './mixins';
+
+*{
+    font-family: 'Josefin Sans';
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: variables.$bgColor;
+    color: variables.$textColor;
+    a{
+        color: variables.$textColor;
+        text-decoration: none;
+        transition: .4s;
+    }
+    ul{
+        list-style: none;
+    }
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    @include mixins.container;
+    &-brand{
+        color: variables.$primaryColor;
+        font-size: 3rem;
+    }
+    &-navbar{
+        ul{
+            height: 100%;
+            @include variables.flexCenter;
+            li{
+                margin: 0 1rem;
+                text-transform: uppercase;
+                font-size: .8rem;
+                .active{
+                    color: variables.$secondaryColor;
+                }
+                a{
+                    &hover{
+                        color: variables.$secondaryColor;
+                    }
+                }
+            }
+        }
+    }
+}

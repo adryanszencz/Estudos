@@ -24,6 +24,9 @@ body{
     display: flex;
     justify-content: space-between;
     @include container();
+    @include mobile{
+        padding: 1.1rem;
+    }
     &-brand{
         color: $primaryColor;
         font-size: 3rem;
@@ -32,6 +35,9 @@ body{
         ul{
             height: 100%;
             @include flexCenter();
+            @include mobile{
+                display: none;
+            }
             li{
                 margin: 0 1rem;
                 text-transform: uppercase;
@@ -51,6 +57,9 @@ body{
         ul{
             @include flexCenter();
             height: 100%;
+            @include mobile{
+                display: none;
+            }
             li{
                 margin: 0 1rem;
                 a{
@@ -68,11 +77,22 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0;
+    @include mobile{
+        flex-direction: column;
+    }
 
     &-card{
         width: 31%;
         height: 400px;
         margin-bottom: 4%;
+        @include flexCenter();
+        flex-direction: column;
+        color: $primaryColor;
+        @include mobile{
+            width: 90%;
+            margin-bottom: 6%;
+        }
+
         &-title{
             font-size: 2rem;
             font-weight: 300;
@@ -118,5 +138,13 @@ body{
     }
     #card-9{
         @include bg-img('refeicoes.jpg');
+    }
+}
+footer{
+    text-align: center;
+    padding-bottom: 2rem;
+    span{
+        font-weight: bold;
+        color: $secondaryColor;
     }
 }

@@ -1,5 +1,5 @@
-@use './variables';
-@use './mixins';
+@import "./variables";
+@import "./mixins";
 
 *{
     font-family: 'Josefin Sans';
@@ -7,11 +7,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body{
-    background-color: variables.$bgColor;
-    color: variables.$textColor;
+    background-color: $bgColor;
+    color: $textColor;
     a{
-        color: variables.$textColor;
+        color: $textColor;
         text-decoration: none;
         transition: .4s;
     }
@@ -22,28 +23,100 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
-    @include mixins.container;
+    @include container();
     &-brand{
-        color: variables.$primaryColor;
+        color: $primaryColor;
         font-size: 3rem;
     }
     &-navbar{
         ul{
             height: 100%;
-            @include variables.flexCenter;
+            @include flexCenter();
             li{
                 margin: 0 1rem;
                 text-transform: uppercase;
                 font-size: .8rem;
                 .active{
-                    color: variables.$secondaryColor;
+                    color: $secondaryColor;
                 }
                 a{
-                    &hover{
-                        color: variables.$secondaryColor;
+                    &:hover{
+                        color: $secondaryColor;
                     }
                 }
             }
         }
+    }
+    &-social-media{
+        ul{
+            @include flexCenter();
+            height: 100%;
+            li{
+                margin: 0 1rem;
+                a{
+                    &:hover{
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+    }    
+}
+.gallery{
+    @include flexCenter();
+    @include container();
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+
+    &-card{
+        width: 31%;
+        height: 400px;
+        margin-bottom: 4%;
+        &-title{
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        &-btn{
+            padding: .6rem 2rem;
+            border: 2px solid $primaryColor;
+            color: $primaryColor;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            &:hover{
+                background-color: $primaryColor;
+                color: $bgColor;
+            }
+        }
+        
+    }
+    #card-1{
+        @include bg-img('animais.jpg');
+    }
+    #card-2{
+        @include bg-img('arquitetura.jpg');
+    }
+    #card-3{
+        @include bg-img('cidade.jpg');
+    }
+    #card-4{
+        @include bg-img('decoracao.jpg');
+    }
+    #card-5{
+        @include bg-img('esportes.jpg');
+    }
+    #card-6{
+        @include bg-img('natureza.jpg');
+    }
+    #card-7{
+        @include bg-img('paisagem.jpg');
+    }
+    #card-8{
+        @include bg-img('pessoas.jpg');
+    }
+    #card-9{
+        @include bg-img('refeicoes.jpg');
     }
 }
